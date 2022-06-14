@@ -3,8 +3,9 @@ package com.cg.spring.demo;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.support.AbstractApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import com.cg.spring.demo.config.SpringConfig;
 import com.cg.spring.demo.model.Employee;
 
 /**
@@ -23,20 +24,19 @@ import com.cg.spring.demo.model.Employee;
 // dependency injection == provide objects 
 
 // Spring configuration 
-//- 1. Java based configuration - create separate java class 
-//- 2. XML based configuration - create an XML file 
-//- 3. Annotation based configuration - give annotations 
+//- 1. Java based configuration 
+//- 2. XML based configuration 
+//- 3. Annotation based configuration 
 
-// Example of - //- 1. Java based configuration 
-public class App {
+// Example of - //- 2. XML based configuration 
+
+public class App3 {
 
 	public static void main(String[] args) {
 
 		System.out.println("Start");
 
-		ApplicationContext context = new AnnotationConfigApplicationContext(SpringConfig.class);
-
-//		Employee emp = new Employee();  
+		ApplicationContext context = new ClassPathXmlApplicationContext("SpringConfig.xml");
 
 		Employee emp = context.getBean(Employee.class);
 
@@ -45,6 +45,8 @@ public class App {
 		System.out.println(emp.toString());
 
 		System.out.println("End");
+
+		((AbstractApplicationContext) context).close();
 
 	}
 }
