@@ -18,7 +18,8 @@ import com.cg.spring.demo.model.Employee;
 
 // Spring provides you beans == objects 
 
-// 
+// DI - 
+// dependency injection 
 
 public class App {
 
@@ -31,7 +32,7 @@ public class App {
 //		Employee emp = new Employee(); // dinner - disposable plates, reusable plates
 
 		Employee emp = context.getBean(Employee.class);
-		
+
 		emp.setFirstName("Sonu");
 		System.out.println(emp.toString());
 
