@@ -1,5 +1,8 @@
 package com.cg.spring.demo.model;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class Employee {
 
 	private int eid;

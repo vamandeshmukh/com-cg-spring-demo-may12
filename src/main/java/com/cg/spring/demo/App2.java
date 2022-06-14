@@ -27,14 +27,16 @@ import com.cg.spring.demo.model.Employee;
 //- 2. XML based configuration 
 //- 3. Annotation based configuration 
 
-// Example of - //- 1. Java based configuration 
-public class App {
+// Example of - //- 3. Annotation based configuration 
+
+@ComponentScan
+public class App2 {
 
 	public static void main(String[] args) {
 
 		System.out.println("Start");
 
-		ApplicationContext context = new AnnotationConfigApplicationContext(SpringConfig.class);
+		ApplicationContext context = new AnnotationConfigApplicationContext(App2.class);
 
 //		Employee emp = new Employee();  
 
